@@ -249,6 +249,8 @@ class PolicyGradient(rl_agent.AbstractAgent):
       return rl_losses.BatchRMLoss
     elif loss_str == "a2c":
       return rl_losses.BatchA2CLoss
+    elif loss_str == "neurd":
+      return rl_losses.BatchNeuRDLoss
 
   def minimize_with_clipping(self, model, optimizer, loss):
     optimizer.zero_grad()
